@@ -9,27 +9,31 @@ const sectionVariants = {
 const projects = [
   {
     title: "Pipeline de Dados",
-    description: "Automação de ETL com Python para processamento de grandes volumes de dados.",
+    description: "Automação de ETL com Python para processamento de dados extraídos de uma API de previsão do tempo.",
     metric: "Latency: 120ms",
-    tags: ["Python", "ETL", "AWS"],
+    tags: ["Python", "ETL", "Airflow", "AWS"],
+    github: "https://github.com/blainesilva16/weather_data_pipeline"
   },
   {
     title: "Análise Preditiva",
     description: "Modelo de machine learning para análise preditiva com alto índice de acurácia.",
     metric: "Accuracy: 98.2%",
     tags: ["Python", "ML", "Data"],
+    github: "https://github.com/blainesilva16/weather_data_pipeline"
   },
   {
     title: "Dashboard de Dados",
-    description: "Visualização interativa de métricas e KPIs em tempo real.",
+    description: "Visualização interativa de métricas e KPIs de um dataset do MovieLens.",
     metric: "Uptime: 99.9%",
-    tags: ["React", "Data Viz", "API"],
+    tags: ["AWS S3", "AWS Glue", "Amazon Athena", "Amazon QuickSight"],
+    github: "https://github.com/blainesilva16/projeto_analytics_filmes_metabase"
   },
   {
     title: "Automação Cloud",
     description: "Infraestrutura automatizada na AWS para deploy contínuo de aplicações.",
     metric: "Deploy: 3min",
     tags: ["AWS", "CI/CD", "Python"],
+    github: "https://github.com/blainesilva16/projeto_analytics_filmes_metabase"
   },
 ];
 
@@ -61,7 +65,9 @@ const ProjectsSection = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent ease-apple transition-colors duration-200" />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <ArrowUpRight  className="w-4 h-4 text-muted-foreground group-hover:text-accent ease-apple transition-colors duration-200" />
+                  </a>
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5 text-pretty">
