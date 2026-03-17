@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
-const transition = { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] };
+const transition = { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const HeroSection = () => {
   return (
