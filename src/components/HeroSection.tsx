@@ -6,6 +6,11 @@ const transition = { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] as const };
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Modern gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-background to-accent/[0.06]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsla(188,100%,47%,0.08)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsla(222,47%,11%,0.05)_0%,_transparent_50%)]" />
+
       {/* Subtle cloud grid SVG background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
