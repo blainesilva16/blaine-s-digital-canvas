@@ -64,6 +64,7 @@ const Navbar = () => {
               </Link>
             );
           })}
+          <ThemeToggle />
         </div>
       </nav>
     </motion.header>
