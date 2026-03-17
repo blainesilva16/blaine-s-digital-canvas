@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 const Index = () => {
   return (
     <main className="bg-background">
+      <Navbar />
       <HeroSection />
       <ProfileSection />
       <ProjectsSection />
