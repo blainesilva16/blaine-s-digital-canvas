@@ -164,8 +164,8 @@ const Sobre = () => {
                 transition={{ ...transition, delay: i * 0.1 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <card.icon className="w-5 h-5 text-accent" />
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${i % 2 === 0 ? 'bg-accent/10 group-hover:bg-accent/20' : 'bg-rose/10 group-hover:bg-rose/20'}`}>
+                    <card.icon className={`w-5 h-5 ${i % 2 === 0 ? 'text-accent' : 'text-rose'}`} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">{card.title}</h3>
