@@ -164,8 +164,8 @@ const Sobre = () => {
                 transition={{ ...transition, delay: i * 0.1 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <card.icon className="w-5 h-5 text-accent" />
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300 ${i % 2 === 0 ? 'bg-accent/10 group-hover:bg-accent/20' : 'bg-rose/10 group-hover:bg-rose/20'}`}>
+                    <card.icon className={`w-5 h-5 ${i % 2 === 0 ? 'text-accent' : 'text-rose'}`} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">{card.title}</h3>
@@ -194,7 +194,7 @@ const Sobre = () => {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border/60" />
+            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-rose/40 to-accent/40" />
 
             <div className="space-y-8">
               {timeline.map((item, i) => (
@@ -207,12 +207,12 @@ const Sobre = () => {
                   transition={{ ...transition, delay: i * 0.1 }}
                 >
                   {/* Timeline dot */}
-                  <div className="relative z-10 flex-shrink-0 w-11 h-11 rounded-full bg-background border-2 border-accent/40 flex items-center justify-center shadow-sm">
-                    <item.icon className="w-5 h-5 text-accent" />
+                  <div className={`relative z-10 flex-shrink-0 w-11 h-11 rounded-full bg-background border-2 flex items-center justify-center shadow-sm ${i % 2 === 0 ? 'border-accent/40' : 'border-rose/40'}`}>
+                    <item.icon className={`w-5 h-5 ${i % 2 === 0 ? 'text-accent' : 'text-rose'}`} />
                   </div>
 
                   <div className="flex-1 p-5 rounded-xl bg-card border border-border/50 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 ease-apple transition-all duration-300">
-                    <span className="font-mono-data text-xs text-accent tracking-wider">{item.year}</span>
+                    <span className={`font-mono-data text-xs tracking-wider ${i % 2 === 0 ? 'text-accent' : 'text-rose'}`}>{item.year}</span>
                     <h3 className="font-semibold text-primary mt-1 mb-1">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {item.description}
