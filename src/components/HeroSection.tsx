@@ -6,10 +6,10 @@ const transition = { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] as const };
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Modern gradient background — darker */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-primary/[0.03] to-accent/[0.10]" />
+      {/* Modern gradient background — cyan + rose */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-[hsla(330,80%,75%,0.07)] to-accent/[0.10]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsla(188,100%,47%,0.14)_0%,_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsla(222,47%,11%,0.10)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsla(330,80%,75%,0.12)_0%,_transparent_50%)]" />
 
       {/* Subtle cloud grid SVG background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
@@ -31,6 +31,16 @@ const HeroSection = () => {
         }}
         animate={{ y: [0, -20, 0], scale: [1, 1.02, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Floating rose accent orb */}
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-[350px] h-[350px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, hsla(330, 80%, 75%, 0.08) 0%, transparent 70%)",
+        }}
+        animate={{ y: [0, 15, 0], scale: [1, 1.03, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-5xl mx-auto px-6 pt-32 pb-24 text-center relative z-10">

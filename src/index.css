@@ -27,6 +27,9 @@
     --accent: 188 100% 47%;
     --accent-foreground: 222 47% 11%;
 
+    --rose: 330 80% 75%;
+    --rose-foreground: 222 47% 11%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
@@ -41,6 +44,7 @@
     --shadow-card-hover: 0 0 0 1px rgba(0,0,0,.03), 0 4px 8px rgba(0,0,0,.07), 0 20px 40px rgba(0,0,0,.07);
     --shadow-float: 0 8px 30px rgba(0,0,0,.12);
     --glow-cyan: 0 0 20px hsla(188, 100%, 47%, 0.15);
+    --glow-rose: 0 0 20px hsla(330, 80%, 75%, 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -74,6 +78,9 @@
     --accent: 188 100% 47%;
     --accent-foreground: 222 47% 6%;
 
+    --rose: 330 80% 70%;
+    --rose-foreground: 222 47% 6%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
@@ -85,6 +92,7 @@
     --shadow-card-hover: 0 0 0 1px rgba(255,255,255,.06), 0 4px 8px rgba(0,0,0,.4), 0 20px 40px rgba(0,0,0,.35);
     --shadow-float: 0 8px 30px rgba(0,0,0,.4);
     --glow-cyan: 0 0 20px hsla(188, 100%, 47%, 0.25);
+    --glow-rose: 0 0 20px hsla(330, 80%, 70%, 0.25);
 
     --sidebar-background: 222 44% 8%;
     --sidebar-foreground: 210 20% 92%;
