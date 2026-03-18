@@ -7,28 +7,28 @@ const transition = { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const timeline = [
   {
-    year: "2019",
+    year: "2024",
     icon: GraduationCap,
     title: "Formação em Matemática",
-    description: "Base sólida em raciocínio lógico, álgebra e análise.",
+    description: "Base sólida em raciocínio lógico, álgebra, análise e estatística.",
   },
   {
-    year: "2022",
-    icon: Code2,
-    title: "Ciência da Computação",
-    description: "Cursando — engenharia de software, algoritmos e estruturas de dados.",
-  },
-  {
-    year: "2023",
+    year: "2025",
     icon: Award,
     title: "AWS Cloud Practitioner",
     description: "Certificação em fundamentos de computação em nuvem da Amazon.",
   },
   {
+    year: "2026",
+    icon: Code2,
+    title: "Ciência da Computação",
+    description: "Cursando — engenharia de software, algoritmos e estruturas de dados.",
+  },  
+  {
     year: "Atual",
     icon: Target,
     title: "Foco em Dados",
-    description: "Pipelines, automação e análise com Python e ecossistema de dados.",
+    description: "Pipelines, automação, análise e geração de insights e modelos preditivos com o ecossistema de dados.",
   },
 ];
 
@@ -36,22 +36,22 @@ const infoCards = [
   {
     icon: Briefcase,
     title: "Experiência",
-    description: "Em breve — adicione aqui suas experiências profissionais.",
+    description: "Pipelines de dados, dashboards, frontend, backend.",
   },
   {
     icon: BookOpen,
     title: "Habilidades",
-    description: "Em breve — adicione aqui suas principais habilidades técnicas.",
+    description: "Python, SQL, Docker, Apache Airflow, Metabase, AWS, Linux, API, JavaScript, Github.",
   },
   {
     icon: Rocket,
     title: "Objetivos",
-    description: "Em breve — adicione aqui seus objetivos de carreira.",
+    description: "Começando com obter minha primeira oportunidade profissional em dados até alcançar a senioridade em Ciência de Dados, sempre com profissionalismo e dedicação ao meu trabalho.",
   },
   {
     icon: Heart,
     title: "Interesses",
-    description: "Em breve — adicione aqui seus interesses pessoais.",
+    description: "Praia, amigos, família, viagens, passeios, séries (doramas) e kpop.",
   },
 ];
 
@@ -92,8 +92,19 @@ const Sobre = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: 0.35 }}
           >
-            Uma profissional que conecta rigor matemático à engenharia de software moderna,
-            construindo soluções inteligentes na interseção entre cloud e dados.
+            {/* Uma profissional que conecta rigor matemático à engenharia de software moderna,
+            construindo soluções inteligentes na interseção entre cloud e dados. */}
+            Sou uma profissional graduada em Matemática, atualmente cursando Ciência da Computação
+            e transicionando para a área de dados, combinando pensamento analítico com experiência prática em
+            Engenharia de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
+          </motion.p>
+          <motion.p>
+            Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
+            em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
+          </motion.p>
+          <motion.p>
+            Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
+            evoluir até chegar a ser Cientista de Dados.
           </motion.p>
 
           {/* Social links */}
@@ -216,7 +227,7 @@ const Sobre = () => {
             <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-primary mb-3">Vamos conversar?</h2>
             <p className="text-muted-foreground text-sm mb-6">
-              Entre em contato pelas minhas redes sociais ou envie um e-mail.
+              Entre em contato pelas minhas redes sociais.
             </p>
             <div className="flex items-center justify-center gap-3">
               {socials.map((s) => (

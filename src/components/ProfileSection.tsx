@@ -7,9 +7,9 @@ const sectionVariants = {
 };
 
 const badges = [
-  { label: "Python", icon: Code2 },
+  { label: "Python e SQL", icon: Code2 },
   { label: "AWS Cloud Practitioner", icon: Cloud, glow: true },
-  { label: "Análise de Dados", icon: BarChart3 },
+  { label: "Engenharia , Análise e Ciência de Dados", icon: BarChart3 },
   { label: "Matemática", icon: Sigma },
 ];
 
@@ -39,11 +39,14 @@ const ProfileSection = () => {
               </p>
               <p>
                 Certificada AWS Cloud Practitioner, com foco em pipelines de dados, 
-                automação e análise de alta precisão usando Python e o ecossistema de dados.
+                automação e análise de alta precisão usando Python, SQL e o ecossistema de dados.
               </p>
-              <p className="text-muted-foreground text-sm italic">
+              <p>
+                Com objetivo em tirar as próximas certificações AWS: AI Practitioner, Machine Learning e Data Engineer.
+              </p>
+              {/* <p className="text-muted-foreground text-sm italic">
                 — As informações detalhadas serão adicionadas em breve.
-              </p>
+              </p> */}
             </div>
           </motion.div>
 

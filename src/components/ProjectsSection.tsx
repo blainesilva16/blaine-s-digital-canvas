@@ -10,31 +10,38 @@ const projects = [
   {
     title: "Pipeline de Dados",
     description: "Automação de ETL com Python para processamento de dados extraídos de uma API de previsão do tempo.",
-    metric: "Latency: 120ms",
-    tags: ["Python", "ETL", "Airflow", "AWS"],
+    youtube: "https://youtube.com",
+    tags: ["Python", "ETL", "Airflow", "AWS EC2", "Docker"],
     github: "https://github.com/blainesilva16/weather_data_pipeline"
   },
+  // {
+  //   title: "Análise Preditiva",
+  //   description: "Modelo de machine learning para análise preditiva com alto índice de acurácia.",
+  //   youtube: "https://youtube.com",
+  //   tags: ["Python", "ML", "Data"],
+  //   github: "https://github.com/blainesilva16/weather_data_pipeline"
+  // },
   {
-    title: "Análise Preditiva",
-    description: "Modelo de machine learning para análise preditiva com alto índice de acurácia.",
-    metric: "Accuracy: 98.2%",
-    tags: ["Python", "ML", "Data"],
-    github: "https://github.com/blainesilva16/weather_data_pipeline"
-  },
-  {
-    title: "Dashboard de Dados",
+    title: "Dashboard de Dados do MovieLens",
     description: "Visualização interativa de métricas e KPIs de um dataset do MovieLens.",
-    metric: "Uptime: 99.9%",
-    tags: ["AWS S3", "AWS Glue", "Amazon Athena", "Amazon QuickSight"],
+    youtube: "https://youtube.com",
+    tags: ["BigQuery", "Docker", "Metabase", "AWS EC2"],
     github: "https://github.com/blainesilva16/projeto_analytics_filmes_metabase"
   },
   {
-    title: "Automação Cloud",
-    description: "Infraestrutura automatizada na AWS para deploy contínuo de aplicações.",
-    metric: "Deploy: 3min",
-    tags: ["AWS", "CI/CD", "Python"],
-    github: "https://github.com/blainesilva16/projeto_analytics_filmes_metabase"
+    title: "Deploy Portfolio Python",
+    description: "Aplicação em Flask reunindo projetos pessoais de Python com deploy em instância EC2.",
+    youtube: "https://youtube.com",
+    tags: ["AWS EC2", "APIs", "Python", "Backend", "Frontend"],
+    github: "https://github.com/blainesilva16/Python-Portfolio"
   },
+  { 
+    title: "Dashboard de Dados com Insights de Negócios",
+    description: "Visualização de métricas de uma empresa fictícia para avaliar performance.",
+    youtube: "https://youtube.com",
+    tags: ["AWS S3", "AWS Glue", "Amazon Athena", "Amazon QuickSight"],
+    github: "https://github.com/blainesilva16/projeto_desafio_tecnico_lighthouse"
+  }
 ];
 
 const ProjectsSection = () => {
@@ -86,7 +93,7 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   <span className="font-mono-data text-xs text-accent font-medium">
-                    {project.metric}
+                    {project.youtube}
                   </span>
                 </div>
               </motion.div>
@@ -97,7 +104,7 @@ const ProjectsSection = () => {
             variants={sectionVariants}
             className="text-center text-sm text-muted-foreground mt-8 italic"
           >
-            — Projetos detalhados serão adicionados em breve.
+            — Mais projetos em breve.
           </motion.p>
         </motion.div>
       </div>

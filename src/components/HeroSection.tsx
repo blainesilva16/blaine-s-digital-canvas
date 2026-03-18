@@ -40,7 +40,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...transition, delay: 0.1 }}
         >
-          Cloud · Data · Matemática
+          Cloud · Dados · Software
         </motion.p>
 
         <motion.h1
@@ -58,7 +58,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...transition, delay: 0.35 }}
         >
-          Onde a precisão matemática encontra a escalabilidade da nuvem.
+          Onde a precisão dos dados encontra a escalabilidade da nuvem.
         </motion.p>
 
         <motion.p
@@ -67,7 +67,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...transition, delay: 0.45 }}
         >
-          Cientista da Computação · Matemática · AWS Cloud Practitioner · Python · Dados
+          Futura Cientista de Dados · Matemática · AWS Cloud Practitioner · Estudante de Ciência da Computação
         </motion.p>
 
         <motion.div
