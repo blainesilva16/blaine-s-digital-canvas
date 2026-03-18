@@ -39,11 +39,11 @@ const ProfileSection = () => {
               </p>
               <p>
                 Certificada AWS Cloud Practitioner, com foco em pipelines de dados, 
-                automação e análise de alta precisão usando Python, SQL e o ecossistema de dados.
+                automação e análise de alta precisão usando o ecossistema de dados.
               </p>
-              <p>
+              {/* <p>
                 Com objetivo em tirar as próximas certificações AWS: AI Practitioner, Machine Learning e Data Engineer.
-              </p>
+              </p> */}
               {/* <p className="text-muted-foreground text-sm italic">
                 — As informações detalhadas serão adicionadas em breve.
               </p> */}

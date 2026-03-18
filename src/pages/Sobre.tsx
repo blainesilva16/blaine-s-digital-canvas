@@ -98,14 +98,6 @@ const Sobre = () => {
             e transicionando para a área de dados, combinando pensamento analítico com experiência prática em
             Engenharia de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
           </motion.p>
-          <motion.p>
-            Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
-            em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
-          </motion.p>
-          <motion.p>
-            Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
-            evoluir até chegar a ser Cientista de Dados.
-          </motion.p>
 
           {/* Social links */}
           <motion.div
@@ -127,6 +119,25 @@ const Sobre = () => {
               </a>
             ))}
           </motion.div>
+          
+          <motion.p
+            ssName="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...transition, delay: 0.35 }}
+          >
+            Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
+            em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
+          </motion.p>
+          <motion.p
+            className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...transition, delay: 0.35 }}
+          >
+            Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
+            evoluir até chegar a ser Cientista de Dados.
+          </motion.p>
         </div>
       </section>
 

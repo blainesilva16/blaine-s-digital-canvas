@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, VideoIcon } from "lucide-react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -92,9 +92,12 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
-                  <span className="font-mono-data text-xs text-accent font-medium">
+                  <a href={project.youtube} target="_blank" rel="noopener noreferrer">
+                    <VideoIcon className="font-mono-data text-xs text-accent font-medium" />
+                  </a>
+                  {/* <span className="font-mono-data text-xs text-accent font-medium">
                     {project.youtube}
-                  </span>
+                  </span> */}
                 </div>
               </motion.div>
             ))}
