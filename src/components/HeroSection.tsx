@@ -33,6 +33,16 @@ const HeroSection = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
+      {/* Floating rose accent orb */}
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-[350px] h-[350px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, hsla(330, 80%, 75%, 0.08) 0%, transparent 70%)",
+        }}
+        animate={{ y: [0, 15, 0], scale: [1, 1.03, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <div className="max-w-5xl mx-auto px-6 pt-32 pb-24 text-center relative z-10">
         <motion.p
           className="font-mono-data text-sm tracking-widest uppercase text-accent mb-6"
