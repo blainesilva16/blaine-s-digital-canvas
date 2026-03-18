@@ -194,7 +194,7 @@ const Sobre = () => {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border/60" />
+            <div className="absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-rose/40 to-accent/40" />
 
             <div className="space-y-8">
               {timeline.map((item, i) => (
