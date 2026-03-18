@@ -121,7 +121,7 @@ const Sobre = () => {
           </motion.div>
           
           <motion.p
-            ssName="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+            className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: 0.35 }}
