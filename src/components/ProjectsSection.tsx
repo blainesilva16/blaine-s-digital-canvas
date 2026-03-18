@@ -68,7 +68,7 @@ const ProjectsSection = () => {
               <motion.div
                 key={project.title}
                 variants={sectionVariants}
-                className={`${i % 2 === 0 ? 'text-accent' : 'text-rose'} group bg-muted rounded-2xl p-6 shadow-card ease-apple transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover cursor-pointer`
+                className={`group bg-muted rounded-2xl p-6 shadow-card ease-apple transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover cursor-pointer ${i % 2 === 0 ? 'text-accent' : 'text-rose'}`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
