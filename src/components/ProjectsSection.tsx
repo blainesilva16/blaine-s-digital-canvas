@@ -55,7 +55,7 @@ const ProjectsSection = () => {
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <motion.div variants={sectionVariants} className="mb-12">
-            <p className="font-mono-data text-sm tracking-widest uppercase text-accent mb-4">
+            <p className="font-mono-data text-sm tracking-widest uppercase text-rose mb-4">
               Projetos
             </p>
             <h2 className="text-3xl sm:text-4xl font-semibold text-primary">
@@ -64,7 +64,7 @@ const ProjectsSection = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, i) => (
               <motion.div
                 key={project.title}
                 variants={sectionVariants}
@@ -93,7 +93,7 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   <a href={project.youtube} target="_blank" rel="noopener noreferrer">
-                    <VideoIcon className="font-mono-data text-xs text-accent font-medium" />
+                    <VideoIcon className={`font-mono-data text-xs ${i % 2 == 0 ? 'text-accent' : 'text-rose'} font-medium`} />
                   </a>
                   {/* <span className="font-mono-data text-xs text-accent font-medium">
                     {project.youtube}

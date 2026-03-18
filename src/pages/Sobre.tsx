@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Code2, Target, Mail, Linkedin, Github, Instagram, Briefcase, BookOpen, Rocket, Heart } from "lucide-react";
+import { GraduationCap, Award, Code2, Target, Mail, Linkedin, Github, Instagram, Briefcase, BookOpen, Rocket, Heart, Laptop2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,13 +14,19 @@ const timeline = [
   },
   {
     year: "2025",
+    icon: Code2,
+    title: "Conclusão de Cursos",
+    description: "Certificação em Desenvolvimento Web e Python.",
+  },
+  {
+    year: "2025",
     icon: Award,
     title: "AWS Cloud Practitioner",
     description: "Certificação em fundamentos de computação em nuvem da Amazon.",
   },
   {
     year: "2026",
-    icon: Code2,
+    icon: Laptop2,
     title: "Ciência da Computação",
     description: "Cursando — engenharia de software, algoritmos e estruturas de dados.",
   },  
@@ -36,7 +42,7 @@ const infoCards = [
   {
     icon: Briefcase,
     title: "Experiência",
-    description: "Pipelines de dados, dashboards, frontend, backend.",
+    description: "Pipelines de dados, dashboards, frontend, backend, computação em nuvem, controle de versão.",
   },
   {
     icon: BookOpen,
@@ -67,85 +73,107 @@ const Sobre = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-accent/[0.06]" />
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <motion.p
-            className="font-mono-data text-sm tracking-widest uppercase text-accent mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.1 }}
-          >
-            Sobre mim
-          </motion.p>
-          <motion.h1
-            className="text-4xl sm:text-5xl font-semibold text-primary mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.2 }}
-          >
-            Quem é Blaine Silva.
-          </motion.h1>
-          <motion.p
-            className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.35 }}
-          >
-            {/* Uma profissional que conecta rigor matemático à engenharia de software moderna,
-            construindo soluções inteligentes na interseção entre cloud e dados. */}
-            Sou uma profissional graduada em Matemática, atualmente cursando Ciência da Computação
-            e transicionando para a área de dados, combinando pensamento analítico com experiência prática em
-            Engenharia de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
-          </motion.p>
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[60%_40%] w-full max-w-7xl items-center gap-12 px-6 lg:px-20 py-20">
 
-          {/* Social links */}
+        <section className="relative pt-32 pb-20 overflow-hidden lg:pt-0 lg:pb-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-accent/[0.06]" />
+          <div className="max-w-2xl mx-auto px-6 relative z-10">
+            <motion.p
+              className="font-mono-data text-sm tracking-widest uppercase text-rose mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.1 }}
+            >
+              Sobre mim
+            </motion.p>
+            <motion.h1
+              className="text-4xl sm:text-5xl font-semibold text-primary mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.2 }}
+            >
+              Quem é Blaine Silva.
+            </motion.h1>
+            <motion.p
+              className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.35 }}
+            >
+              {/* Uma profissional que conecta rigor matemático à engenharia de software moderna,
+              construindo soluções inteligentes na interseção entre cloud e dados. */}
+              Sou uma profissional graduada em Matemática, atualmente cursando Ciência da Computação
+              e transicionando para a área de dados, combinando pensamento analítico com experiência prática em
+              Engenharia de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
+            </motion.p>
+
+            {/* Social links */}
+            <motion.div
+              className="flex items-center gap-3 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.5 }}
+            >
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-muted/60 border border-border/50 text-muted-foreground hover:text-accent hover:border-accent/30 hover:bg-accent/5 ease-apple transition-all duration-300"
+                >
+                  <s.icon className="w-4 h-4" />
+                  <span className="text-sm font-medium">{s.label}</span>
+                </a>
+              ))}
+            </motion.div>
+            
+            <motion.p
+              className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.35 }}
+            >
+              Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
+              em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
+            </motion.p>
+            <motion.p
+              className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transition, delay: 0.35 }}
+            >
+              Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
+              evoluir até chegar a ser Cientista de Dados.
+            </motion.p>
+          </div>
+        </section>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1, ease: "circOut" }}
+          className="flex justify-center"
+        >
           <motion.div
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.5 }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", bounce: 0 }}
+            className="relative w-full max-w-[300px] aspect-[3/4] bg-muted overflow-hidden rounded-2xl"
+            style={{ boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.15), 0 12px 24px -8px rgb(0 0 0 / 0.1)" }}
           >
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-muted/60 border border-border/50 text-muted-foreground hover:text-accent hover:border-accent/30 hover:bg-accent/5 ease-apple transition-all duration-300"
-              >
-                <s.icon className="w-4 h-4" />
-                <span className="text-sm font-medium">{s.label}</span>
-              </a>
-            ))}
+            <img
+              src="/my_image.png"
+              alt="Blaine Silva"
+              className="w-full h-full object-cover grayscale-0 hover:grayscale transition-all duration-700"
+            />
           </motion.div>
-          
-          <motion.p
-            className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.35 }}
-          >
-            Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
-            em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
-          </motion.p>
-          <motion.p
-            className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.35 }}
-          >
-            Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
-            evoluir até chegar a ser Cientista de Dados.
-          </motion.p>
-        </div>
-      </section>
-
+        </motion.div>
+      </div>
       {/* Info Cards */}
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6">
           <motion.p
-            className="font-mono-data text-sm tracking-widest uppercase text-accent mb-10"
+            className="font-mono-data text-sm tracking-widest uppercase text-rose mb-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -184,7 +212,7 @@ const Sobre = () => {
       <section className="py-24 bg-muted/50">
         <div className="max-w-5xl mx-auto px-6">
           <motion.p
-            className="font-mono-data text-sm tracking-widest uppercase text-accent mb-10"
+            className="font-mono-data text-sm tracking-widest uppercase text-rose mb-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -235,7 +263,7 @@ const Sobre = () => {
             viewport={{ once: true }}
             transition={transition}
           >
-            <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
+            <Mail className="w-8 h-8 text-rose mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-primary mb-3">Vamos conversar?</h2>
             <p className="text-muted-foreground text-sm mb-6">
               Entre em contato pelas minhas redes sociais.

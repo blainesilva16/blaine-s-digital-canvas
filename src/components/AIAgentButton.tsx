@@ -4,10 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const API_URL = "https://exdkuiv26k.execute-api.us-east-1.amazonaws.com";
+const API_URL = "https://exdkuiv26k.execute-api.us-east-1.amazonaws.com/chat";
 
 const WELCOME_MESSAGE =
-  "Olá! Eu sou a assistente virtual da Blaine Silva e posso responder suas principais dúvidas sobre ela.";
+  "Olá! Eu sou a assistente virtual da Blaine Silva e posso responder suas principais dúvidas sobre ela."
 
 const QUICK_ACTIONS = [
   "Principais projetos desenvolvidos",
@@ -25,12 +25,10 @@ const AIAgentButton = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
+    bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, isLoading]);
 
   const sendMessage = async (text: string) => {
@@ -49,11 +47,33 @@ const AIAgentButton = () => {
         body: JSON.stringify({ message: text.trim(), history: updatedMessages }),
       });
 
+      // {
+      //   "body": "{\"message\": \"Tell me about Blaine's projects\"}",
+      //   "httpMethod": "POST",
+      //   "headers": {
+      //     "Content-Type": "application/json"
+      //   },
+      //   "isBase64Encoded": false
+      // }
+
       if (!res.ok) throw new Error("Erro na requisição");
 
       const data = await res.json();
+      let payload: any = data;
+
+      if (data.body && typeof data.body === "string") {
+        try {
+          payload = JSON.parse(data.body);
+        } catch {
+          payload = { ...data, body: data.body };
+        }
+      } else if (data.body && typeof data.body === "object") {
+        payload = data.body;
+      }
+
       const assistantContent =
-        data.response || data.message || data.body || "Desculpe, não consegui processar sua solicitação.";
+        payload.reply || payload.response || payload.message ||
+        "Desculpe, não consegui processar sua solicitação.";
 
       setMessages((prev) => [...prev, { role: "assistant", content: assistantContent }]);
     } catch {
@@ -86,8 +106,8 @@ const AIAgentButton = () => {
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-secondary/50">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 text-accent" />
+                <div className="w-8 h-8 rounded-full bg-rose/20 flex items-center justify-center">
+                  <MessageSquare className="w-4 h-4 text-rose" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground leading-tight">Agente IA</p>
@@ -106,12 +126,12 @@ const AIAgentButton = () => {
             </div>
 
             {/* Messages */}
-            <ScrollArea className="flex-1 min-h-0">
-              <div ref={scrollRef} className="px-4 py-4 space-y-3">
+            <ScrollArea className="flex-1 min-h-0 overflow-y-auto">
+              <div className="px-4 py-4 space-y-3">
                 {/* Welcome */}
                 <div className="flex gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <MessageSquare className="w-3 h-3 text-accent" />
+                  <div className="w-6 h-6 rounded-full bg-rose/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <MessageSquare className="w-3 h-3 text-rose" />
                   </div>
                   <div className="bg-secondary rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]">
                     <p className="text-sm text-foreground leading-relaxed">{WELCOME_MESSAGE}</p>
@@ -126,7 +146,7 @@ const AIAgentButton = () => {
                         key={action}
                         onClick={() => sendMessage(action)}
                         disabled={isLoading}
-                        className="text-left text-xs px-3 py-2 rounded-xl border border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/60 transition-all duration-200 disabled:opacity-50"
+                        className="text-left text-xs px-3 py-2 rounded-xl border border-rose/30 text-rose hover:bg-rose/10 hover:border-rose/60 transition-all duration-200 disabled:opacity-50"
                       >
                         {action}
                       </button>
@@ -138,8 +158,8 @@ const AIAgentButton = () => {
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex gap-2.5 ${msg.role === "user" ? "justify-end" : ""}`}>
                     {msg.role === "assistant" && (
-                      <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
-                        <MessageSquare className="w-3 h-3 text-accent" />
+                      <div className="w-6 h-6 rounded-full bg-rose/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <MessageSquare className="w-3 h-3 text-rose" />
                       </div>
                     )}
                     <div
@@ -171,6 +191,7 @@ const AIAgentButton = () => {
                     </div>
                   </div>
                 )}
+                <div ref={bottomRef} aria-hidden="true" className="h-0" />
               </div>
             </ScrollArea>
 

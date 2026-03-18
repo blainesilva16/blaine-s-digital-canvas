@@ -7,9 +7,9 @@ const sectionVariants = {
 };
 
 const badges = [
-  { label: "Python e SQL", icon: Code2 },
+  { label: "Python, SQL, JavaScript", icon: Code2 },
   { label: "AWS Cloud Practitioner", icon: Cloud, glow: true },
-  { label: "Engenharia , Análise e Ciência de Dados", icon: BarChart3 },
+  { label: "Engenharia, Análise e Ciência de Dados", icon: BarChart3 },
   { label: "Matemática", icon: Sigma },
 ];
 
@@ -52,7 +52,7 @@ const ProfileSection = () => {
 
           {/* Right column - 2/5 */}
           <motion.div className="md:col-span-2" variants={sectionVariants}>
-            <p className="font-mono-data text-sm tracking-widest uppercase text-accent mb-4">
+            <p className="font-mono-data text-sm tracking-widest uppercase text-rose mb-4">
               Stack Técnica
             </p>
             <div className="space-y-3">

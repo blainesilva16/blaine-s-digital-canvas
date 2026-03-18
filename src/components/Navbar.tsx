@@ -40,7 +40,7 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center gap-1">
-          {links.map((link) => {
+          {links.map((link,i) => {
             const isActive = location.pathname === link.to;
             return (
               <Link
@@ -49,14 +49,14 @@ const Navbar = () => {
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300",
                   isActive
-                    ? "text-accent"
+                    ? `${i % 2 == 0 ? 'text-accent' : 'text-rose'}`
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {link.label}
                 {isActive && (
                   <motion.div
-                    className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-accent"
+                    className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full ${i % 2 == 0 ? 'bg-accent' : 'bg-rose'}`}
                     layoutId="navbar-indicator"
                     transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
                   />
