@@ -93,7 +93,7 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   <a href={project.youtube} target="_blank" rel="noopener noreferrer">
-                    <VideoIcon className={`font-mono-data text-xs ${i % 2 == 0 ? 'text-accent' : 'text-rose'} font-medium`} />
+                    <VideoIcon className="font-mono-data text-xs text-rose font-medium" />
                   </a>
                   {/* <span className="font-mono-data text-xs text-accent font-medium">
                     {project.youtube}
