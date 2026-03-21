@@ -4,7 +4,7 @@ Este portfólio tem como objetivo reunir meus principais projetos desenvolvidos 
 
 ## Conteúdo do Portfólio
 
-Este portfólio traz projetos relacionados à dados e ao desenvolvimento de aplicações, com processo de deploy feito na AWS.
+Este portfólio traz projetos relacionados à dados e ao desenvolvimento de aplicações, com processo de deploy feito no Cloudflare com API de IA na AWS.
 
 Alguns projetos listados são:
 
@@ -14,19 +14,21 @@ Alguns projetos listados são:
 
 ## Arquitetura do Portfólio
 
-O Portfólio utiliza React com TypeScript para proporcionar um design moderno e responsivo. Foi hospedado na AWS segundo a arquitetura:
+O Portfólio utiliza React com TypeScript para proporcionar um design moderno e responsivo. Foi hospedado no Cloudflare com requisições API feitas na AWS segundo a arquitetura:
 
 ```bash
-Site (S3) → API Gateway → Lambda → IA → resposta → site (S3)
+Site (Cloudflare) → API Gateway → Lambda → IA → resposta → site (Cloudflare)
 ```
 
-Todo o conteúdo do Portfólio foi gerado para o bucket S3 em modo de produção pelo comando:
+Todo o conteúdo do Portfólio foi gerado para o Cloudflare em modo de produção pelo comando:
 
 ```bash
 npm run build
 ```
 
-E assim apenas o conteúdo da pasta /dist foi para o S3.
+E assim apenas o conteúdo da pasta /dist foi para o Cloudflare.
+
+A escolha do Cloudflare se deu pela facilidade em obter um endereço HTTPS com o menor custo.
 
 Criei uma Lambda Function para armazenar o código do meu agente de IA que responde às perguntas sobre mim. Lá está a API KEY da OpenAI como variável de ambiente, sendo que as dependências necessárias para a OpenAI foram instaladas no próprio CloudShell da AWS, para que fossem compatíveis com o runtime da Lambda Function.
 
