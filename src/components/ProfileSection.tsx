@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cloud, Code2, BarChart3, Sigma } from "lucide-react";
+import { Cloud, Code2, BarChart3, Sigma, Database, ContainerIcon, GitBranchIcon, SettingsIcon } from "lucide-react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -7,10 +7,15 @@ const sectionVariants = {
 };
 
 const badges = [
-  { label: "Python, SQL, JavaScript", icon: Code2 },
-  { label: "AWS Cloud Practitioner", icon: Cloud, glow: true },
-  { label: "Engenharia, Análise e Ciência de Dados", icon: BarChart3 },
-  { label: "Matemática", icon: Sigma },
+  { label: "Python - JavaScript - Desenvolvimento Web", icon: Code2 },
+  // { label: "AWS Cloud Practitioner", icon: Cloud, glow: true },
+  { label: "Computação em Nuvem (AWS e GCP)", icon: Cloud },
+  { label: "Engenharia e Ciência de Dados", icon: BarChart3 },
+  { label: "Matemática - Estatística", icon: Sigma },
+  { label: "SQL - PostgreSQL - SQLite - Supabase - Redis", icon: Database },
+  { label: "Docker - Conteinerização", icon: ContainerIcon },
+  { label: "Git - Github", icon: GitBranchIcon },
+  { label: "Consumo e Integração de APIs", icon: SettingsIcon },
 ];
 
 const ProfileSection = () => {
@@ -35,15 +40,19 @@ const ProfileSection = () => {
             <div className="space-y-4 text-foreground/80 leading-relaxed text-pretty">
               <p>
                 Com formação em Matemática e atualmente cursando Ciência da Computação, 
-                construo soluções que unem rigor analítico à engenharia de software moderna.
+                construo soluções que unem insights extraídos de dados à engenharia de software de excelência.
+              </p>
+              <p>
+                Minha jornada, iniciada em 2016, é marcada por uma paixão por transformar dados em histórias e soluções práticas,
+                utilizando uma combinação de habilidades analíticas e técnicas para criar impacto real através dos dados.
               </p>
               <p>
                 Certificada AWS Cloud Practitioner, com foco em pipelines de dados, 
                 automação e análise de alta precisão usando o ecossistema de dados.
               </p>
-              {/* <p>
+              <p>
                 Com objetivo em tirar as próximas certificações AWS: AI Practitioner, Machine Learning e Data Engineer.
-              </p> */}
+              </p>
               {/* <p className="text-muted-foreground text-sm italic">
                 — As informações detalhadas serão adicionadas em breve.
               </p> */}
@@ -57,11 +66,15 @@ const ProfileSection = () => {
             </p>
             <div className="space-y-3">
               {badges.map((badge) => (
+                // <div
+                //   key={badge.label}
+                //   className={`flex items-center gap-3 px-4 py-3 rounded-lg bg-background shadow-card ease-apple transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover ${
+                //     badge.glow ? "glow-cyan" : ""
+                //   }`}
+                // >
                 <div
                   key={badge.label}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg bg-background shadow-card ease-apple transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover ${
-                    badge.glow ? "glow-cyan" : ""
-                  }`}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg bg-background shadow-card ease-apple transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover hover:glow-cyan`}
                 >
                   <badge.icon className="w-4 h-4 text-accent shrink-0" />
                   <span className="text-sm font-medium text-foreground">{badge.label}</span>

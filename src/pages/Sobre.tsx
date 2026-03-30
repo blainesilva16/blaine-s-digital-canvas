@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Code2, Target, Mail, Linkedin, Github, Instagram, Briefcase, BookOpen, Rocket, Heart, Laptop2 } from "lucide-react";
+import { GraduationCap, Award, Code2, Target, Mail, Linkedin, Github, Instagram, Youtube, Briefcase, BookOpen, Rocket, Heart, Laptop2, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -7,10 +7,16 @@ const transition = { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const timeline = [
   {
+    year: "2019",
+    icon: GraduationCap,
+    title: "Formação no Ensino Médio com Técnico em Informática - IFRJ",
+    description: "Conteúdos de lógica de programação, redes, hardware e desenvolvimento de software.",
+  },
+  {
     year: "2024",
     icon: GraduationCap,
-    title: "Formação em Matemática",
-    description: "Base sólida em raciocínio lógico, álgebra, análise e estatística.",
+    title: "Formação em Licenciatura em Matemática - UFF",
+    description: "Conteúdos envolvendo raciocínio lógico, cálculo, álgebra, análise e estatística.",
   },
   {
     year: "2025",
@@ -25,39 +31,51 @@ const timeline = [
     description: "Certificação em fundamentos de computação em nuvem da Amazon.",
   },
   {
+    year: "2025",
+    icon: Phone,
+    title: "Projeto Real de Automação",
+    description: "Implementação de um Sistema de Envio de Mensagens via WhatsApp."
+  },
+  {
     year: "2026",
     icon: Laptop2,
-    title: "Ciência da Computação",
+    title: "Ciência da Computação - UNESA",
     description: "Cursando — engenharia de software, algoritmos e estruturas de dados.",
   },  
   {
     year: "Atual",
     icon: Target,
     title: "Foco em Dados",
-    description: "Pipelines, automação, análise e geração de insights e modelos preditivos com o ecossistema de dados.",
+    description: "Pipelines, automação, análise, criação de dashboards e geração de insights e modelos preditivos com o ecossistema de dados.",
   },
+  {
+    year: "Futuro",
+    icon: Rocket,
+    title: "Objetivo Profissional",
+    description: "Contribuir, aprender e evoluir até chegar a ser Cientista de Dados, com mais certificações e cursos profissionalizantes.",
+  }
 ];
 
 const infoCards = [
   {
     icon: Briefcase,
     title: "Experiência",
-    description: "Pipelines de dados, dashboards, frontend, backend, computação em nuvem, controle de versão.",
+    description: "Pipelines de Dados (ETL) - Análise Exploratória - Dashboards - Machine Learning - Frontend - Backend - Computação em Nuvem - Controle de Versão.",
   },
   {
     icon: BookOpen,
     title: "Habilidades",
-    description: "Python, SQL, Docker, Apache Airflow, Metabase, AWS, Linux, API, JavaScript, Github.",
+    description: "Python - Machine Learning - SQL - Docker - Apache Airflow - Metabase - AWS - GCP - API - JavaScript - Github - N8N.",
   },
   {
     icon: Rocket,
     title: "Objetivos",
-    description: "Começando com obter minha primeira oportunidade profissional em dados até alcançar a senioridade em Ciência de Dados, sempre com profissionalismo e dedicação ao meu trabalho.",
+    description: "Ser uma profissional de excelência em Ciência de Dados, realizando análises precisas através da Estatística, Matemática e Programação para resolver problemas de negócios, prever tendências futuras e auxiliar na tomada de decisão estratégica.",
   },
   {
     icon: Heart,
     title: "Interesses",
-    description: "Praia, amigos, família, viagens, passeios, séries (doramas) e kpop.",
+    description: "Meu cachorrinho - Praia - Amigos - Família - Viagens - Passeios - Piano - Séries (doramas) - Kpop - Receitas - Bullet Journal.",
   },
 ];
 
@@ -65,6 +83,7 @@ const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/blaine-silva-0ab04a178/" },
   { icon: Github, label: "GitHub", href: "https://github.com/blainesilva16" },
   { icon: Instagram, label: "Instagram", href: "https://instagram.com/blainesilva16" },
+  { icon: Youtube, label: "Youtube", href: "https://youtube.com/bscode16" },
 ];
 
 const Sobre = () => {
@@ -104,7 +123,7 @@ const Sobre = () => {
               construindo soluções inteligentes na interseção entre cloud e dados. */}
               Sou uma profissional graduada em Matemática, atualmente cursando Ciência da Computação
               e transicionando para a área de dados, combinando pensamento analítico com experiência prática em
-              Engenharia de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
+              Engenharia e Ciência de Dados e Computação em Nuvem (AWS, Google Cloud Platform).
             </motion.p>
 
             {/* Social links */}
@@ -134,8 +153,8 @@ const Sobre = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...transition, delay: 0.35 }}
             >
-              Através de projetos práticos, desenvolvi pipelines de dados, fiz o deploy de aplicações
-              em ambientes de nuvem e construí soluções em Python focadas em usabilidade e performance.
+              Através de projetos práticos, desenvolvi pipelines de dados, construí dashboards, fiz o deploy de aplicações
+              em ambientes de nuvem e construí soluções em Python e em JavaScript focadas em qualidade e performance.
             </motion.p>
             <motion.p
               className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed mb-8"
@@ -144,7 +163,7 @@ const Sobre = () => {
               transition={{ ...transition, delay: 0.35 }}
             >
               Atualmente busco minha primeira oportunidade profissional para contribuir, aprender e 
-              evoluir até chegar a ser Cientista de Dados.
+              evoluir até chegar na senioridade em Ciência de Dados.
             </motion.p>
           </div>
         </section>

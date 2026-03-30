@@ -101,9 +101,10 @@ const HeroSection = () => {
           className="lg:col-span-4 flex flex-col gap-8 lg:items-end lg:text-right"
         >
           <div className="space-y-2">
-            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Formação</span>
+            {/* <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Formação</span> */}
+            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Sobre mim</span>
             <p className="text-base font-medium text-foreground">
-              Futura Cientista de Dados · Matemática · AWS Cloud Practitioner
+              Cientista de Dados · Matemática · AWS Certified
             </p>
           </div>
           <div className="space-y-2">
